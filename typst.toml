@@ -1,0 +1,22 @@
+[package]
+name = "RUG-Thesis"
+version = "0.0.1"
+compiler = "0.11.0"
+entrypoint = "lib.typ"
+repository = "https://github.com/oscarpeters/RUG-Thesis_Typst_template"
+authors = ["Oscar Peters"]
+license = "MIT"
+description = "A thesis template for the University of Groningen / Rijksuniversiteit Groningen."
+keywords = [
+    "thesis",
+    "university",
+    "RUG",
+    "Groningen",
+    "Rijksuniversiteit Groningen",
+]
+categories = ["thesis"]
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
