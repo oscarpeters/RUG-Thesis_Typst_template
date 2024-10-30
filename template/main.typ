@@ -28,7 +28,7 @@
   intro-text: "To fulfill the requirements for the degree of 
 Master of ...
 at University of Groningen under the supervision of ... ", // Add your own
-)åç
+)
 
 // neat code
 #import "@preview/codly:1.0.0": *
