@@ -3,6 +3,10 @@ Rijksuniversiteit Groningen Thesis Template for Typst
 
 This is a simple Thesis template for the University of Groningen / Rijksuniversiteit Groningen.
 
+<div align="center">
+    <img src="thumbnail.png" alt="drawing" style="width:500px; text-align:center; display:block;"/>
+</div>
+
 ## Usage
 
 In the Typst web app simply click "Start from template" on the dashboard and search for RUG Thesis.
