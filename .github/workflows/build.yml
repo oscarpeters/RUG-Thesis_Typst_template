@@ -1,0 +1,37 @@
+name: Build Typst document
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Typst
+        uses: lvignoli/typst-action@main
+        with:
+          source_file: template/main.typ
+      
+      - name: Rename main.pdf
+        run: mv template/main.pdf Thesis.pdf
+
+      - name: Upload PDF file
+        uses: actions/upload-artifact@v4
+        with:
+          name: PDF
+          path: Thesis.pdf
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: github.ref_type == 'tag'
+        with:
+          name: "${{ github.ref_name }}"
+          files: Thesis.pdf
