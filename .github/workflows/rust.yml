@@ -6,29 +6,16 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  CARGO_TERM_COLOR: always
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Set up Rust
-      uses: actions-rs/toolchain@v1
+    - name: Github Action for Typst
+      uses: lvignoli/typst-action@v0.1
       with:
-        toolchain: stable
-        override: true
-
-    - name: Install Typst
-      run: cargo install typst-cli --verbose
-
-    - name: Build Typst document
-      run: typst build  template/main.typ
-
-    - name: Run Typst tests
-      run: typst check template/main.typ --verbose
+        input_file: template/main.typ
+        output_file: template/main.pdf
